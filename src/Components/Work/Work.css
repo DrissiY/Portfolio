@@ -1,0 +1,31 @@
+
+.work {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.work button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+.work Link{
+    text-decoration: none;
+}
+.workimg{
+    display: none;
+    border-radius: 50%;
+    transition: transform 1s ease;
+}
+
+.work :hover {
+    display: block;
+}
+
+.work:hover .workimg {
+    display: block;
+    transform: scale(5);
+  }
+

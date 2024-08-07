@@ -1,0 +1,17 @@
+.hireme {
+    color: rgb(0, 0, 0);
+    margin-left: auto;
+   width: 240px;
+
+    background-color: rgb(255, 255, 255);
+    padding: 3rem;
+    border: none;
+    font-size: 24px;
+    align-items: center;
+}
+
+.lineed{
+    border-top: 1px solid #d7d7d7;
+  
+    width: 100vw;
+}

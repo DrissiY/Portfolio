@@ -1,0 +1,35 @@
+.navlist li a {
+    color: white;
+   
+}
+
+.navlist ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-weight: 100;
+    font-size: 16px;
+
+}
+
+.navbar-button {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navlist {
+      display: none;
+    }
+  
+    .navbar-button {
+      display: block;
+      background-color: transparent;
+    border: none;
+    color: white;
+      cursor: pointer;
+    }
+  }

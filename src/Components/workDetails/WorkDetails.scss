@@ -1,0 +1,48 @@
+.main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.description-section,
+.screenshots-section,
+.technologies-section {
+    margin-top: 20px;
+}
+
+.screenshots-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.work-infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    h2 {
+        font-size: 50px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        font-weight: 200;
+        margin-bottom: 20px;
+    }
+}
