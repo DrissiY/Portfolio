@@ -18,6 +18,7 @@ const About = () => {
       flexDirection: "column",
     },
   }));
+
   return (
     <Box>
       <CostumContainer>
@@ -28,9 +29,7 @@ const About = () => {
           className="text"
         >
           <p>
-            "True success in one's career is not measured solely by external
-            achievements, but by the inner development of wisdom, integrity, and
-            the constant pursuit of knowledge." <span>- Socrates</span>
+            "Art and technology must blend seamlessly. Development is not just functional; it's about creating intuitive, beautiful experiences that inspire and elevate." <span>- John Maeda</span>
           </p>
         </motion.div>
         <motion.div
@@ -46,11 +45,11 @@ const About = () => {
             }}
             whileTap={{ scale: 0.9 }}
           >
-            <button style={{ border: "solid 0.2rem black" }}>
-            <Link style={{ color: "white" }} to="/about">
-              About me
+            <Link to="/about" style={{ textDecoration: 'none' }}>
+              <button style={{ border: "solid 0.2rem black", color: 'white', backgroundColor: 'black' }}>
+                About me
+              </button>
             </Link>
-          </button>
           </motion.div>
         </motion.div>
       </CostumContainer>

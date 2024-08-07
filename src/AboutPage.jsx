@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import { Box, styled } from "@mui/material";
 import { Container } from "@mui/system";
@@ -7,6 +7,10 @@ import Footer from "./Components/Footer/Footer.jsx";
 
 
 const AboutPage = () => {
+
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   const CostumContainer = styled(Container)(({ theme }) => ({
     display: "flex",

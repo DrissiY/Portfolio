@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import me from "../../Assets/Me2.jpg";
+import me from "../../Assets/me.png";
 import Navbar from "../Navbar/Navbar";
 import "./hero.css";
 import { styled, Container } from "@mui/material";

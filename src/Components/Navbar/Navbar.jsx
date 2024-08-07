@@ -41,7 +41,7 @@ const Navbar = () => {
         <ul className='navbar-nav'>
           <li><Link to="/about">About</Link></li>
           <li><span onClick={handleWorkClick} style={{ cursor: "pointer", color: "white" }}>Work</span></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><a href="mailto:unesdrissi2@gmail.com" style={{ color: "white" }}>Contact</a></li>
         </ul>
       </div>
       <button className="navbar-button"><MenuIcon /></button>

@@ -25,7 +25,7 @@ const Footer = () => {
           </h1>
         </div>
         <div>
-          <button className="hireme">Hire me</button>
+          <button className="hireme" href="mailto:unesdrissi2@gmail.com">Hire me</button>
         </div>
       </CostumContainer>
       <CostumContainer>
