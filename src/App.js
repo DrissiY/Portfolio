@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   return (
-    <Routes>
+    <Routes >
       <Route path="/" element={<Landing />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/work/:projectId" element={<WorkDetails />} />
