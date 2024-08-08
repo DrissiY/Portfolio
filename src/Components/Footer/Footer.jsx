@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import { Container } from "@mui/system";
 import "./Footer.css";
 
@@ -25,7 +25,7 @@ const Footer = () => {
           </h1>
         </div>
         <div>
-          <button className="hireme" href="mailto:unesdrissi2@gmail.com">Hire me</button>
+          <button className="hireme">Hire me</button>
         </div>
       </CostumContainer>
       <CostumContainer>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Landing from './Landing';
 import AboutPage from './AboutPage';
-import Myworks from './Myworks';
 import WorkDetails from './Components/workDetails/Workdetails.jsx';
 import './App.css';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, styled, Container } from "@mui/material";
+import { styled, Container } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useNavigate } from 'react-router-dom';
 import './navbar.css';

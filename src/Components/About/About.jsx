@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import { Container } from "@mui/system";
 import "./about.css";
 import { Link } from "react-router-dom";
