@@ -49,7 +49,7 @@ const Work = () => {
         <div>
           {Works.map((item) => (
             <div key={item.id} className="work">
-              <Link to={`/work/${item.id}`}>
+              <Link to={`/work/${item.id}`} className="custom-link">
                 <h1 style={{ fontSize: '100px' }}>{item.title}</h1>
               </Link>
               <p>{item.job}</p>

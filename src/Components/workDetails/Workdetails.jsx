@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
 import { Box, styled } from "@mui/material";
@@ -6,6 +6,7 @@ import { Container } from "@mui/system";
 import Footer from "../../Components/Footer/Footer.jsx";
 import { projectData } from "./projectData.js";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import "./WorkDetails.scss";
 
 const WorkDetails = () => {
   const { projectId } = useParams();
@@ -14,15 +15,16 @@ const WorkDetails = () => {
   const currentProjectIndex = projectKeys.indexOf(projectId);
   const nextProjectId = projectKeys[(currentProjectIndex + 1) % projectKeys.length];
   const project = projectData[projectId];
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [projectId]);
 
-
   if (!project) {
     return <div>Project not found</div>;
   }
-
 
   const CostumContainer = styled(Container)(({ theme }) => ({
     display: "flex",
@@ -76,6 +78,7 @@ const WorkDetails = () => {
     height: "auto",
     objectFit: "cover",
     borderRadius: "0px",
+    cursor: "pointer", // Make the image look clickable
   });
 
   const NextButton = styled("button")(({ theme }) => ({
@@ -100,6 +103,16 @@ const WorkDetails = () => {
   const handleNextClick = () => {
     window.scrollTo(0, 0);
     navigate(`/work/${nextProjectId}`);
+  };
+
+  const handleImageClick = (imgSrc) => {
+    setSelectedImage(imgSrc);
+    setIsPreviewOpen(true);
+  };
+
+  const closePreview = () => {
+    setIsPreviewOpen(false);
+    setSelectedImage(null);
   };
 
   return (
@@ -134,13 +147,21 @@ const WorkDetails = () => {
       </CostumContainer>
       <ImageGrid>
         {project.images.map((imgSrc, index) => (
-          <Image key={index} src={imgSrc} alt={`Image ${index + 1}`} />
+          <Image key={index} src={imgSrc} alt={`Image ${index + 1}`} onClick={() => handleImageClick(imgSrc)} />
         ))}
       </ImageGrid>
 
       <NextButton onClick={handleNextClick}>
         Next <ArrowForwardIcon style={{ marginLeft: "8px" }} />
       </NextButton>
+
+      {isPreviewOpen && (
+        <div className="image-preview-overlay" onClick={closePreview}>
+          <div className="image-preview-content">
+            <img src={selectedImage} alt="Preview" className="image-preview-img" />
+          </div>
+        </div>
+      )}
 
       <Footer />
     </Box>
