@@ -30,7 +30,7 @@ const Hero = () => {
       sx={{
         width: "100vw",
         height: "100vh",
-        backgroundImage: `url(${me})`,
+        backgroundImage: `url("https://i.imghippo.com/files/paCx01723324078.jpg")`,
         backgroundRepeat:"no-repeat",
         backgroundSize:"cover"
       }}
