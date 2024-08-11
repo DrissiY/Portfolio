@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.6aba36d4.css",
-    "main.js": "/portfolio/static/js/main.2198de28.js",
-    "static/media/Lbagif.gif": "/portfolio/static/media/Lbagif.5cf3113c172c2864a6a4.gif",
-    "static/media/teilen-videospeed.gif": "/portfolio/static/media/teilen-videospeed.fb71223a563ca1374adc.gif",
-    "static/media/lirikaigif.gif": "/portfolio/static/media/lirikaigif.915e30a74d6d2691e647.gif",
-    "static/media/lbamap.png": "/portfolio/static/media/lbamap.4c20e591c764922c5098.png",
-    "static/media/lirikai2.png": "/portfolio/static/media/lirikai2.18df6c13c49b97a0e4a4.png",
-    "static/media/Artist1.png": "/portfolio/static/media/Artist1.68f131de6a8dc6130aea.png",
-    "static/media/meee.jpg": "/portfolio/static/media/meee.61ba607ac10d6c937e46.jpg",
-    "static/media/lirikai1.png": "/portfolio/static/media/lirikai1.59dffc39cd724a392e8b.png",
-    "static/media/CPF.png": "/portfolio/static/media/CPF.aacdd45644e6b5ad3daf.png",
-    "static/media/Artist 2.png": "/portfolio/static/media/Artist 2.387b042c3477c124935f.png",
-    "static/media/lba-planing.png": "/portfolio/static/media/lba-planing.060bb7e728564bb3cdad.png",
-    "static/media/Artist 3.png": "/portfolio/static/media/Artist 3.592e0325fc9ff839d364.png",
-    "static/media/lirikai3.png": "/portfolio/static/media/lirikai3.00063dfc9746221cfa59.png",
-    "static/media/CV.pdf": "/portfolio/static/media/CV.c96e65a96ef27272adcd.pdf",
-    "index.html": "/portfolio/index.html",
-    "main.6aba36d4.css.map": "/portfolio/static/css/main.6aba36d4.css.map",
-    "main.2198de28.js.map": "/portfolio/static/js/main.2198de28.js.map"
+    "main.css": "/www.drissy.me/static/css/main.6aba36d4.css",
+    "main.js": "/www.drissy.me/static/js/main.e332d6c2.js",
+    "static/media/Lbagif.gif": "/www.drissy.me/static/media/Lbagif.5cf3113c172c2864a6a4.gif",
+    "static/media/teilen-videospeed.gif": "/www.drissy.me/static/media/teilen-videospeed.fb71223a563ca1374adc.gif",
+    "static/media/lirikaigif.gif": "/www.drissy.me/static/media/lirikaigif.915e30a74d6d2691e647.gif",
+    "static/media/lbamap.png": "/www.drissy.me/static/media/lbamap.4c20e591c764922c5098.png",
+    "static/media/lirikai2.png": "/www.drissy.me/static/media/lirikai2.18df6c13c49b97a0e4a4.png",
+    "static/media/Artist1.png": "/www.drissy.me/static/media/Artist1.68f131de6a8dc6130aea.png",
+    "static/media/meee.jpg": "/www.drissy.me/static/media/meee.61ba607ac10d6c937e46.jpg",
+    "static/media/lirikai1.png": "/www.drissy.me/static/media/lirikai1.59dffc39cd724a392e8b.png",
+    "static/media/CPF.png": "/www.drissy.me/static/media/CPF.aacdd45644e6b5ad3daf.png",
+    "static/media/Artist 2.png": "/www.drissy.me/static/media/Artist 2.387b042c3477c124935f.png",
+    "static/media/lba-planing.png": "/www.drissy.me/static/media/lba-planing.060bb7e728564bb3cdad.png",
+    "static/media/Artist 3.png": "/www.drissy.me/static/media/Artist 3.592e0325fc9ff839d364.png",
+    "static/media/lirikai3.png": "/www.drissy.me/static/media/lirikai3.00063dfc9746221cfa59.png",
+    "static/media/CV.pdf": "/www.drissy.me/static/media/CV.c96e65a96ef27272adcd.pdf",
+    "index.html": "/www.drissy.me/index.html",
+    "main.6aba36d4.css.map": "/www.drissy.me/static/css/main.6aba36d4.css.map",
+    "main.e332d6c2.js.map": "/www.drissy.me/static/js/main.e332d6c2.js.map"
   },
   "entrypoints": [
     "static/css/main.6aba36d4.css",
-    "static/js/main.2198de28.js"
+    "static/js/main.e332d6c2.js"
   ]
 }
