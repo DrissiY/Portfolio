@@ -2,7 +2,7 @@
   "name": "younes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://drissiy.github.io/portfolio",
+  "homepage": "https:/www.drissy.me",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -24,6 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "echo drissy.me > build/CNAME",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
