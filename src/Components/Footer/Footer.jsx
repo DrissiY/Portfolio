@@ -47,7 +47,7 @@ const Footer = () => {
             <span style={{ fontWeight: "500", color: "#949494" }}>Social</span>{" "}
             <br />{" "}
             <span style={{display:"flex", justifyContent:"space-between", gap:"15px"}}>
-              <a>Instagram</a> <a>linkedIn</a> <a>Dribble</a>
+              <a href="instagram.com/youdri.wav">Instagram</a> <a href="linked.com/younesdrissi">linkedIn</a> <a href="dribble.com/younes-drissi">Dribble</a>
             </span>{" "}
           </p>
         </div>

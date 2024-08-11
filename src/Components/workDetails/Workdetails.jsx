@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import Navbar from "../../Components/Navbar/Navbar.jsx";
 import { Box, styled } from "@mui/material";
 import { Container } from "@mui/system";
 import Footer from "../../Components/Footer/Footer.jsx";
 import { projectData } from "./projectData.js";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Loader from "../../Components/loader/Loader.jsx";
+import { useMediaQuery } from "@mui/material";
 import "./WorkDetails.scss";
 
 const WorkDetails = () => {
+  const isMobile = useMediaQuery("(max-width:768px)");
   const { projectId } = useParams();
   const navigate = useNavigate();
   const projectKeys = Object.keys(projectData);
@@ -17,9 +21,24 @@ const WorkDetails = () => {
   const project = projectData[projectId];
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const loadAssets = async () => {
+      const cacheKey = `project_${projectId}_cached`;
+      const isDataCached = localStorage.getItem(cacheKey);
+
+      if (!isDataCached) {
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate loading time
+        localStorage.setItem(cacheKey, 'true');
+      }
+
+      setIsLoading(false);
+    };
+
+    loadAssets();
   }, [projectId]);
 
   if (!project) {
@@ -78,7 +97,7 @@ const WorkDetails = () => {
     height: "auto",
     objectFit: "cover",
     borderRadius: "0px",
-    cursor: "pointer", // Make the image look clickable
+    cursor: "pointer",
   });
 
   const NextButton = styled("button")(({ theme }) => ({
@@ -117,53 +136,113 @@ const WorkDetails = () => {
 
   return (
     <Box sx={{ backgroundColor: "#1E1E1E" }}>
-      <Navbar />
-      <CostumContainer>
-        <div>
-          <h1 style={{ fontSize: "200px", fontWeight: "300" }}>{project.title}</h1>
-        </div>
-      </CostumContainer>
-      <div className="work-infos">
-        <Costumjob>
-          <div className="technologies">
-            <h3 style={{ fontWeight: "400" }}>Project Niche</h3>
-            <p style={{ fontWeight: "100" }}>{project.niche}</p>
+      {isLoading && <Loader />}
+      {!isLoading && (
+        <>
+          <Navbar />
+          <CostumContainer>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+                <h1 style={{ fontSize: isMobile ? "80px" : "200px", fontWeight: "300" }}>{project.title}</h1>
+            </motion.div>
+          </CostumContainer>
+          <div className="work-infos">
+            <Costumjob>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="technologies">
+                  <h3 style={{ fontWeight: "400" }}>Project Niche</h3>
+                  <p style={{ fontWeight: "100" }}>{project.niche}</p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="technologies">
+                  <h3 style={{ fontWeight: "400" }}>Development</h3>
+                  <p style={{ fontWeight: "100" }}>{project.development}</p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="technologies">
+                  <h3 style={{ fontWeight: "400" }}>Design</h3>
+                  <p style={{ fontWeight: "100" }}>{project.design}</p>
+                </div>
+              </motion.div>
+            </Costumjob>
           </div>
-          <div className="technologies">
-            <h3 style={{ fontWeight: "400" }}>Development</h3>
-            <p style={{ fontWeight: "100" }}>{project.development}</p>
-          </div>
-          <div className="technologies">
-            <h3 style={{ fontWeight: "400" }}>Design</h3>
-            <p style={{ fontWeight: "100" }}>{project.design}</p>
-          </div>
-        </Costumjob>
-      </div>
 
-      <FullWidthImage src={project.gif} alt={`${project.title} GIF`} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <FullWidthImage src={project.gif} alt={`${project.title} GIF`} />
+          </motion.div>
 
-      <CostumContainer>
-        <p style={{ fontSize: "24px", fontWeight: "200" }}>{project.description}</p>
-      </CostumContainer>
-      <ImageGrid>
-        {project.images.map((imgSrc, index) => (
-          <Image key={index} src={imgSrc} alt={`Image ${index + 1}`} onClick={() => handleImageClick(imgSrc)} />
-        ))}
-      </ImageGrid>
+          <CostumContainer>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <p style={{ fontSize: "24px", fontWeight: "200" }}>{project.description}</p>
+            </motion.div>
+          </CostumContainer>
 
-      <NextButton onClick={handleNextClick}>
-        Next <ArrowForwardIcon style={{ marginLeft: "8px" }} />
-      </NextButton>
+          <ImageGrid>
+            {project.images.map((imgSrc, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Image src={imgSrc} alt={`Image ${index + 1}`} onClick={() => handleImageClick(imgSrc)} />
+              </motion.div>
+            ))}
+          </ImageGrid>
 
-      {isPreviewOpen && (
-        <div className="image-preview-overlay" onClick={closePreview}>
-          <div className="image-preview-content">
-            <img src={selectedImage} alt="Preview" className="image-preview-img" />
-          </div>
-        </div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <NextButton onClick={handleNextClick}>
+              Next <ArrowForwardIcon style={{ marginLeft: "8px" }} />
+            </NextButton>
+          </motion.div>
+
+          {isPreviewOpen && (
+            <div className="image-preview-overlay" onClick={closePreview}>
+              <div className="image-preview-content">
+                <img src={selectedImage} alt="Preview" className="image-preview-img" />
+              </div>
+            </div>
+          )}
+
+          <Footer />
+        </>
       )}
-
-      <Footer />
     </Box>
   );
 };

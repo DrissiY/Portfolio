@@ -1,35 +1,93 @@
+
+
 .navlist li a {
-    color: white;
-   
+  color: white;
 }
 
 .navlist ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    font-weight: 100;
-    font-size: 16px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-weight: 200;
+  font-size: 16px;
 }
 
 .navbar-button {
-    display: none;
-    background-color: transparent;
-    border: none;
-    color: white;
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: white;
 }
 
+.mobile-menu{
+  display: none;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
-    .navlist {
-      display: none;
-    }
-  
-    .navbar-button {
-      display: block;
-      background-color: transparent;
-    border: none;
-    color: white;
-      cursor: pointer;
-    }
+  .navlist {
+      display: none; /* Hide the regular navlist on mobile */
   }
+
+  .navbar-button {
+      display: block; /* Show the burger menu button on mobile */
+      background-color: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+  }
+
+  /* Mobile Menu Styles */
+  .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 90%;
+      height: 100vh;
+      background-color: #1e1e1e;
+      color: white;
+      z-index: 1000;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translateX(-100%); /* Hide off-screen initially */
+      transition: transform 0.5s ease; /* Smooth slide-in transition */
+  }
+
+  /* Ensure this class is applied when the menu is open */
+  .mobile-menu.open {
+      transform: translateX(0); /* Slide in when open */
+  }
+
+  .mobile-navlist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      flex-grow: 1;
+  }
+
+  .mobile-navlist li {
+      margin-bottom: 2rem;
+      font-size: 32px;
+      font-weight: 200;
+  }
+
+  .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+  }
+
+  .contact-info {
+      text-align: left;
+      font-size: 14px;
+  }
+}

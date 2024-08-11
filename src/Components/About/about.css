@@ -3,28 +3,39 @@
     margin: 2rem;
     width: 850px;
     font-size: 36px;
-
-    
 }
 
 .text span {
     font-weight: 200;
-
 }
 
 .button_about {
     display: flex;
-    
 }
+
 .button_about button {
     color: white;
     margin-left: auto;
-   width: 365px;
-cursor: pointer;
-border: none;
+    width: 365px;
+    cursor: pointer;
+    border: none;
     background-color: rgb(0, 0, 0);
     padding: 5rem;
- 
     font-size: 24px;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .text {
+        width: 90%; /* Reduce width to fit the screen */
+        font-size: 24px; /* Adjust font size for readability */
+        margin: 1rem auto; /* Center the text with smaller margins */
+    }
+
+    .button_about button {
+        width: 100%; /* Full width button on mobile */
+        padding: 3rem; /* Adjust padding to fit the screen */
+        font-size: 18px; /* Adjust font size for smaller screens */
+        margin-left: 0; /* Center the button */
+    }
 }

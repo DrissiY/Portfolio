@@ -1,69 +1,65 @@
-// Landing.js
 import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Hero from './Components/Hero/Hero';
 import About from './Components/About/About';
 import Work from './Components/Work/Work';
 import Footer from './Components/Footer/Footer';
 import { Link } from 'react-router-dom';
+import Loader from './Components/loader/Loader';
 
 const Landing = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const controls = useAnimation();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+    const loadAssets = async () => {
+      const isDataCached = localStorage.getItem('dataCached');
 
-    const handleAnimation = () => {
-      if (scrollY > 500) {
-        controls.start({
-          opacity: 1,
-          y: 0,
-        });
-      } else {
-        controls.start({
-          opacity: 0,
-          y: 50,
-        });
+      if (!isDataCached) {
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate loading time
+        localStorage.setItem('dataCached', 'true');
       }
+
+      setIsLoading(false);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleAnimation();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrollY, controls]);
+    loadAssets();
+  }, []);
 
   return (
     <div>
-      <Hero />
-      <motion.div
-        initial={{ opacity: 0, x: -20 }} // Change x property for About component
-        animate={controls}
-        transition={{ duration: 0.2 }}
-      >
-        <About />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 20 }} // Change x property for Work component
-        animate={controls}
-        transition={{ duration: 0.2 }}
-      >
-        <Link to="/work">
-          <Work />
-        </Link>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }} // Keep the y property for Footer component
-        animate={controls}
-        transition={{ duration: 0.2 }}
-      >
-        <Footer />
-      </motion.div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Hero />
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <About />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Link to="/work">
+              <Work />
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Footer />
+          </motion.div>
+        </>
+      )}
     </div>
   );
 };
