@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import { Box, styled } from "@mui/material";
 import { Container } from "@mui/system";
-import mee from "./Assets/meee.jpg";
 import CV from './Assets/CV.pdf';
 import Footer from "./Components/Footer/Footer.jsx";
 import { useMediaQuery } from "@mui/material";
 
 
 const AboutPage = () => {
+   const meee = "https://i.imghippo.com/files/YWFYL1723439055.jpg";
   const isMobile = useMediaQuery("(max-width:768px)");
 
   useEffect(() => {
@@ -109,7 +109,7 @@ const AboutPage = () => {
         >
           <img
             style={{ width: "50%", height: "auto", float: "right" }}
-            src={mee}
+            src={meee}
             alt="Younes Drissi"
           />
         </motion.div>
